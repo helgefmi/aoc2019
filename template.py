@@ -2,7 +2,7 @@
 import pytest
 
 
-def compute(cts):
+def compute(cts: str):
     raise NotImplementedError
 
 
@@ -14,9 +14,9 @@ def test_compute(input_str, expected):
     assert compute(input_str) == expected
 
 
-def main():
+def main() -> int:
     with open('input.txt', 'r') as f:
-        cts = f.read()
+        cts = f.read().strip()
 
     print(compute(cts))
 
