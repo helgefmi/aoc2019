@@ -11,7 +11,7 @@ def str_to_area(area_str):
     return [list(row) for row in area_str.splitlines()]
 
 
-def find_stuff(area: Area):
+def parse_screen(area: Area):
     keys = {}
     doors = {}
     player = (0, 0)
@@ -101,7 +101,7 @@ def get_useful_paths(area, keys, doors, player):
 
 def compute(cts: str):
     area = str_to_area(cts)
-    player, keys, doors = find_stuff(area)
+    player, keys, doors = parse_screen(area)
 
     useful_paths = get_useful_paths(area, keys, doors, player)
 

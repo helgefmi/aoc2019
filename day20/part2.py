@@ -4,7 +4,7 @@ from collections import defaultdict
 import pytest
 
 
-def find_stuff(area):
+def parse_screen(area):
     assert len(set(len(row) for row in area)) == 1
 
     # populate `portals`
@@ -116,7 +116,7 @@ def pathing(area, from_coord, end_coord, transfers):
 
 def compute(cts: str):
     area = [list(row) for row in cts.splitlines()]
-    player, finish, transfers = find_stuff(area)
+    player, finish, transfers = parse_screen(area)
 
     path = pathing(area, player, finish, transfers)
 

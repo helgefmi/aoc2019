@@ -12,7 +12,7 @@ def str_to_area(area_str):
     return [list(row) for row in area_str.splitlines()]
 
 
-def find_stuff(area: Area):
+def parse_screen(area: Area):
     keys = {}
     doors = {}
     coords = (0, 0)
@@ -76,7 +76,7 @@ def find_available_keys(area: Area, from_coord: Coord, keys):
 
 def compute(cts: str):
     area = str_to_area(cts)
-    player, keys, doors = find_stuff(area)
+    player, keys, doors = parse_screen(area)
 
     def recurse(area, player, keys, depth=0, mem={}):
         if not keys:

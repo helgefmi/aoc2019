@@ -12,7 +12,7 @@ def str_to_area(area_str: str) -> Area:
     return [list(row) for row in area_str.splitlines()]
 
 
-def find_stuff(area: Area) -> Tuple[List[Coord], Dict[str, Coord], Dict[str, Coord]]:
+def parse_screen(area: Area) -> Tuple[List[Coord], Dict[str, Coord], Dict[str, Coord]]:
     keys = {}
     doors = {}
     players = []
@@ -105,7 +105,7 @@ def get_useful_paths(area, keys, doors, players):
 
 def compute(cts: str):
     area = str_to_area(cts)
-    players, keys, doors = find_stuff(area)
+    players, keys, doors = parse_screen(area)
 
     useful_paths = get_useful_paths(area, keys, doors, players)
 
