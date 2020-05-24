@@ -10,7 +10,7 @@ def compute(cts: str):
     'input_str, expected', [
     ]
 )
-def test_compute(input_str, expected):
+def test_compute(input_str, expected) -> None:
     assert compute(input_str) == expected
 
 
